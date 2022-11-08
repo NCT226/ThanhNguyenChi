@@ -1,26 +1,46 @@
-#include <iostream>
-#include <math.h>
+//Slove a Linear Equation//
+# include <iostream>
+# include <iomanip>
 using namespace std;
-void input(int &n);
-void output(int n); 
-
+void input( int &a, int &b);
+float calculate( int a, int b, float &result);
+void output(int point, float result);
 int main()
 {
-	int n;
-	cout<<"Enter an integer numbers: ";
-	input(n);
-	cout<<"Result= ";
-	output(n);
+	int a,b;
+	input(a,b);
+	float x;
+	int point= calculate (a,b,x);
+	output(point,x);
 	return 0;
 }
 
-void input(int &n)
+void input( int &a, int &b)
 {
-	cin>>n;
+	cin>>a>>b;
 }
 
-void output(int n)
+float calculate( int a, int b, float &result)
+ {
+	if (a==0)
+		if(b==0)
+			return 2;
+		else 
+			return 0;
+	else 
+	{
+		result=float(-b)/a;
+		return 1;
+	}
+ }
+ 
+void output(int point, float result)
 {
-	cout<<abs(n);
+	if(point==0)
+		cout<<"NO SOLUTION !";
+	else
+		if (point==1)
+			cout<<"Result of equation is:"<<result;
+		else 
+			cout<<"INIFINITE SOLUTION";
 }
-
