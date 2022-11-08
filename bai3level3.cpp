@@ -1,33 +1,41 @@
-# include <iostream> 
+# include <iostream>
 # include <math.h>
-# include <iomanip>
 using namespace std;
-void input (int &n);
-float tinhTongSoHuuTi(int n);
-void output(float kq);
+void input(int &n);
+int laSoHoanHao(int n);
+void output(int kq);
 int main()
 {
 	int n;
 	input(n);
-	float sum=tinhTongSoHuuTi(n);
-	output(sum);
+	int co= laSoHoanHao(n);
+	output(co);
 	return 0;
 }
 
-void input (int &n)
+void input(int &n)
 {
 	cin>>n;
 }
 
-float tinhTongSoHuuTi(int n)
+int laSoHoanHao(int n)
 {
-	float tong=0;
-	for(int i=1;i<=n;i++)
-		tong=tong+(pow(i,-1));
-	return tong;
+	int m=0;
+	int temp=n;
+	for (int i=1; i<n; i++)
+	{
+		if(n%i==0)
+			m=m+i;
+	}
+	if (m==temp)
+		return 1;
+	else
+		return 0;
 }
-
-void output(float kq)
+void output(int kq)
 {
-	cout<<setprecision(2)<<fixed<<kq;
+	if(kq==1)
+		cout<<"La so Hoan Hao";
+	else
+		cout<<"Khong la so Hoan Hao";
 }
