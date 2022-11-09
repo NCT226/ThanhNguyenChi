@@ -1,6 +1,6 @@
 //Slove a Linear Equation//
 # include <iostream>
-# include <iomanip>
+# include <math.h>
 using namespace std;
 void input( int &a, int &b);
 float calculate( int a, int b, float &result);
