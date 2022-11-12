@@ -48,7 +48,8 @@ int tinhTongSo(int n)
 	return tong;
 }
 
-
+//float tinhTong(int n) 
+//Sua lai kieu du lieu double (Vi phep tinh co nhieu phep chia => sai so de xay ra)
 float tinhTong(int n)
 {
 	float tong=0;
